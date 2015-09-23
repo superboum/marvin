@@ -4,10 +4,12 @@ Marvin
 Install
 -------
 
-To start with Marvin, copy-paste config.json.sample to config.json
+To start with Marvin, copy-paste config.json.sample to config.json, install dependencies and run it.
 
 ```bash
 cp config.json.sample config.json
+npm install
+npm start
 ```
 
 And edit config.json according to your needs.
