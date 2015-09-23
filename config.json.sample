@@ -1,0 +1,31 @@
+{
+  "slack": {
+    "auth": {
+      "token": "...",
+      "logging": false
+    },
+    "channel": "C0A5U7FJ7"
+  },
+  "twitter": {
+    "auth": {
+      "consumer_key":         "...",
+      "consumer_secret":      "...",
+      "access_token":         "...",
+      "access_token_secret":  "..."
+    },
+    "follow": [
+      "2563491643", 
+      "103817423", 
+      "2409664627", 
+      "51666844", 
+      "162310750", 
+      "508493022", 
+      "327529966", 
+      "3381475701", 
+      "581605252" 
+    ],
+    "track": [
+      "insa rennes"
+    ]
+  }
+}
