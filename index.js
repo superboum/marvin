@@ -49,16 +49,16 @@ if (config.matrix) {
     });
   }, Promise.resolve()).then(() => {
     roomsId.forEach(roomId => {
-      client.joinRoom(roomId).done(() => {
-        client.sendTextMessage(roomId, "hello, i'm marvin");
-      });
+      client.joinRoom(roomId).done(() => console.log("joined room "+roomId));
     });
 
     stream.on('tweet', tweet => {
       console.log(tweet.text);
-      roomsId.forEach(roomId => {
-        client.sendTextMessage(roomId, "Nouveau tweet de "+tweet.user.name+" ("+tweet.user.screen_name+")\n"+tweet.text+"\nhttps://twitter.com/statuses/"+tweet.id_str);
-      });
+      if (tweet.retweeted_status == undefined || tweet.retweeted_status == null) {
+        roomsId.forEach(roomId => {
+          client.sendTextMessage(roomId, "Nouveau tweet de "+tweet.user.name+" ("+tweet.user.screen_name+")\n"+tweet.text+"\nhttps://twitter.com/statuses/"+tweet.id_str);
+        });
+      }
     });
 
 
