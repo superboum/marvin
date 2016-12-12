@@ -35,6 +35,7 @@ if (config.slack) {
 if (config.matrix) {
   var client = matrix.createClient(config.matrix.auth);
   roomsId = []
+  client.setDisplayName("marvin");
 
   // Load roomsID
   config.matrix.room.reduce((acc, room) => {
@@ -47,14 +48,18 @@ if (config.matrix) {
       });
     });
   }, Promise.resolve()).then(() => {
-    roomsId.forEach(roomId => client.sendTextMessage(roomId, "hello, i'm marvin"));
+    roomsId.forEach(roomId => {
+      client.joinRoom(roomId).done(() => {
+        client.sendTextMessage(roomId, "hello, i'm marvin");
+      });
+    });
 
     stream.on('tweet', tweet => {
-    console.log(tweet.text);
-    roomsId.forEach(roomId => {
-      client.sendTextMessage(roomId, "Nouveau tweet de "+tweet.user.name+" ("+tweet.user.screen_name+")\n"+tweet.text+"\nhttps://twitter.com/statuses/"+tweet.id_str);
+      console.log(tweet.text);
+      roomsId.forEach(roomId => {
+        client.sendTextMessage(roomId, "Nouveau tweet de "+tweet.user.name+" ("+tweet.user.screen_name+")\n"+tweet.text+"\nhttps://twitter.com/statuses/"+tweet.id_str);
+      });
     });
-  });
 
 
   });
