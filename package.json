@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "matrix-js-sdk": "^0.7.1",
     "slackbotapi": "^1.3.4",
     "twit": "^2.1.0"
   }

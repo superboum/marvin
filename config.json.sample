@@ -1,4 +1,14 @@
 {
+  "matrix": {
+    "auth": {
+      "baseUrl": "https://matrix.org",
+      "accessToken": "",
+      "userId": "@bot:matrix.org"
+    },
+    "room": [
+      "#matrix:matrix.org"
+    ]
+  },
   "slack": {
     "auth": {
       "token": "...",
