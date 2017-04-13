@@ -65,6 +65,10 @@ var broadcastWeather = function() {
 broadcastWeather();
 
 bot.onText(/\/activate/, function (msg, match) {
+  if (conversations.includes(msg.chat.id)) {
+    bot.sendMessage(msg.chat.id, "Mais, mais, je suis déjà là :'(");
+    return;
+  }
   bot.sendMessage(msg.chat.id, "Salut tout le monde !");
   conversations.push(msg.chat.id);
 });
