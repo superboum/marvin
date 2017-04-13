@@ -1,0 +1,7 @@
+{
+  "tokens": {
+    "telegram": "xxx",
+    "forecastio": "xxx"
+  },
+  "pos": { "lat": 48.855, "long": 2.289}
+}
