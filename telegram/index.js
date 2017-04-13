@@ -8,8 +8,8 @@ var conversations   = [];
 
 var getTimeBeforeNextLunch = function() {
   var target = new Date();
-  target.setHours(21);
-  target.setMinutes(48);
+  target.setHours(11);
+  target.setMinutes(55);
   target.setSeconds(0);
   var afternoon = target > new Date() ? 0 : 1;
   do {
